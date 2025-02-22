@@ -52,3 +52,18 @@ plt.xlabel("Número de clusters (k)")
 plt.ylabel("Soma dos quadrados dentr do cluster (wcss)")
 plt.grid(True)
 plt.show()
+
+
+# Identificar o número ideal de clusters pelo método Elbow
+# Vamos assumir que o cotovelo está em k=3
+
+optimal_k =3
+# Aplicar K-Medoids com o número ideal de clusters
+
+kmedoids = KMedoids(n_clusters = optimal_k, random_state=42)
+kmedoids.fit(X)
+
+
+#Obter os rótulos dos clusters e os medoids
+labels = kmedoids.labels_
+medoids= kmedoids.cluster_centers_
