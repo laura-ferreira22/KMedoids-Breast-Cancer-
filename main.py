@@ -67,3 +67,13 @@ kmedoids.fit(X)
 #Obter os rótulos dos clusters e os medoids
 labels = kmedoids.labels_
 medoids= kmedoids.cluster_centers_
+
+
+# Gráfico dos dados após a clusterização
+plt.figure(figsize=(8,6))
+plt.scatter(X[:,0],X[:,1], c=labels,s=50, cmap='viridis')
+plt.scatter(medoids[:,0],medoids[:,1],c ="red", marker='X',s=200,alpha=0.75)
+plt.title(f"Dados agrupados com K-medoids(k={optimal_k})")
+plt.xlabel(breast_cancer.feature_names[0])
+plt.ylabel(breast_cancer.feature_names[8])
+plt.show()
