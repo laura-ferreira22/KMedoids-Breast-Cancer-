@@ -18,3 +18,12 @@ X = breast_cancer.data[:,[0,8]]
 
 #Exibir os dados (primeiras 5 linhas)
 X[:5]
+
+
+# Gráfico dos dados antes da clusterização
+plt.figure(figsize=(8,6))
+plt.scatter(X[:,0],X[:,1],s=50)
+plt.title("Dados Originais")
+plt.xlabel(breast_cancer.feature_names[0])
+plt.ylabel(breast_cancer.feature_names[8])
+plt.show()
